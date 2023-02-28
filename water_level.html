@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="Catalina Island, water levels, drought">
+	<meta name="description" content="Catalina Island Water Levels">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<title>Water Levels</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js">></script>
+	<link rel="stylesheet" href="style1.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+	<style>
+		.percentage {
+			padding: 4px 7.73554px;
+			gap: 0px;
+
+			width: 36.47px;
+			height: 20px;
+			display: inline;
+			/* Water Levels/Water (Good) */
+			background: #577F9C;
+			border-radius: 12.8926px;	
+		}
+		.float {
+			clear: left;
+		}
+		.row-1{
+			display: flex;
+			flex-direction: row;
+			align-content: flex-start;
+			justify-content: space-around;
+		}
+	</style>
+</head>
+
+<body>
+<!--	navbar-->
+	<div id="navbar">
+		<ul class="paragraph-1 navbar">
+			<li><a class="nav" href="home.html"><img src="logo.png" alt="logo"></a></li>
+			<li><a class="nav active" href="water_level.html">Water Levels</a></li>
+			<li><a class="nav" href="weather.html">Weather</a></li>
+			<li><a class="nav" href="index.html">Tips</a></li>
+			<li><a class="nav" href="community.html">Community</a></li>
+		</ul>
+	</div>
+<!--	page container-->
+	<div class="main-container"> 
+<!--		container for the water levels-->
+		<div class="box-container">
+			<span class="heading-3">Water Level 💧</span> <span class="heading-4"><br>Most recent <b> Middle Ranch Reservoir </b>data collected: <b>2 Days Ago</b></span>
+			<div>
+			  <canvas id="WaterLevel" style="height:270px; width:100%;max-width:860px"></canvas>
+			</div>
+		</div>
+<!--		sqaure container for water conservation-->
+		<div class="square-container">
+			<span class="paragraph-3">Tariff Stage Level &amp; Mandatory Water Conservation <br> <span class="percentage">0%</span><b class="emergency-text"><br>Stage 1</b></span>
+			<div>
+			  <canvas id="StackWaterLevel" style="height: 240px; width:100%;max-width:860px"></canvas>
+			</div>
+		</div>
+		<div class="float"></div>
+<!--		container for tide levels-->
+		<div class="box-container">
+			<span class="heading-3">Tide Level 🌊</span> <span class="heading-4"><br>Most recent data collected: <b> 1:00 Hr Ago</b></span>
+			<div>
+			  <canvas id="TideLevel" style="height:300px; width:100%;max-width:860px"></canvas>
+			</div>
+		</div>
+<!--		square container for tide information-->
+		<div class="square-container">
+			<div>
+			  <div class="row-1">
+				  <div class="column-1 paragraph-3">Current Tide Level: <span class="emergency-text"><br>High</span></div>
+				  <div class="column-2 paragraph-3">Next Tide At: <span class="emergency-text"><br>5:08 AM</span></div>
+			  </div>
+			  <canvas id="StackTideLevel" style="height: 270px; width:100%;max-width:860px"></canvas>
+			</div>
+		</div>
+		<div class="float"></div>
+		<br>
+<!--		information about catalina island-->
+		<div class="heading-2">About Catalina Island Water Preservation</div>
+		<br><br>
+		<div class="paragraph-2">
+			The Middle Ranch Reservoir, also known as Thompson’s Reservoir, is the main gauge for assessing the fresh water supply conditions for Santa Catalina Island. The measured water level triggers the different stages of water conservation and rationing as laid out in the Schedule 14.1 tariffs.
+
+			Middle Ranch Reservoir Capacity (approximate) and tariff stage levels:
+
+			1053 Acre Feet Approximate total Capacity
+			600 Acre Feet Stage 1 Mandatory Water Conservation
+			300 Acre Feet Stage 2 Mandatory Water Rationing - 25% use reduction compared to baseline year
+			200 Acre Feet Stage 3 50% use reduction compared to baseline year
+			50 Acre Feet Stage 4 75% use reduction compared to baseline year
+
+			**1 acre foot = 325,851 gallons
+		</div>
+	</div>
+	<script>
+		var xWaterValues = ["Sep", "", "", "", "Oct", "", "", "", "Nov", "", "", "", "Dec", "", "", "", "Jan", "", "", "", "Feb", "", "", "", "Mar"];
+		var yWaterValues = [500, 550, 580, 620, 630, 635, 640, 660, 690, 700, 740, 770, 800, 795, 790, 780, 785, 785, 775, 770, 760, 750, 755, 765, 770];
+		var waterBarColors = "#A1CBE3";
+
+		var xTideValues = ["02/18", "", "", "", "02/19", "", "", "", "02/20", "", "", "", "02/21", "", "", "", "02/22", "", "", "", "02/23", "", "", "", "02/24"];
+		var yTideValues = [5, 4.9, 4.6, 4.3, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.3, 5.2, 5.1, 5, 4.9, 4.8, 4.6, 4.4, 4.2, 4.2, 4.4];
+		
+		
+		new Chart("WaterLevel", {
+		  type: "bar",
+		  data: {
+			labels: xWaterValues,
+			datasets: [{
+			  label: 'Water Level',
+			  backgroundColor: waterBarColors,
+			  data: yWaterValues,
+        	  barThickness: 7,
+			  borderRadius: 10,
+				
+			}]
+		  },
+		  options: {
+			responsive: true,
+			plugins:{
+				legend: false,
+				tooltip: {
+					callbacks: {
+						label: (item) =>
+							`${item.dataset.label}: ${item.formattedValue} Acre Feet`,
+					},
+				},
+			},
+			layout: {
+				padding: {
+					top: 25
+				}
+			},
+			scales: {
+				y: {
+				  stacked: true,
+				  title: {
+					  display: true,
+					  text:"Acre Feet"
+				  },
+				  grid: {
+					  drawBorder: false,
+					  drawOnChartArea: false,
+					  display: false,
+				   },
+				},
+				x: {
+				  stacked: true,
+				  grid: {
+					  drawBorder: false,
+					  drawOnChartArea: false,
+					  display: false,
+				   },
+				}
+			  },
+		  }
+		});
+		
+		new Chart("TideLevel", {
+		  type: "bar",
+		  data: {
+			labels: xTideValues,
+			datasets: [{
+			  label: 'Tide Level',
+			  backgroundColor: waterBarColors,
+			  data: yTideValues,
+        	  barThickness: 7,
+			  borderRadius: 10
+			}]
+		  },
+		  options: {
+			responsive: true,
+			plugins:{
+				legend: false,
+				tooltip: {
+					callbacks: {
+						label: (item) =>
+							`${item.dataset.label}: ${item.formattedValue} Feet`,
+					},
+				},
+			},
+			layout: {
+				padding: {
+					top: 25
+				}
+			},
+			scales: {
+				y: {
+				  title: {
+					  display: true,
+					  text:"Feet"
+				  },
+				  grid: {
+					  drawBorder: false,
+					  drawOnChartArea: false,
+					  display: false,
+				   },
+				},
+				x: {
+				  grid: {
+					  drawBorder: false,
+					  drawOnChartArea: false,
+					  display: false,
+				   },
+				}
+			  },
+		  }
+		});
+		
+		var xStackWaterValues = ['Water Level'];
+		var yStackCurrentWaterValues = [770.09]
+		var yStackMaxWaterValues = [1053 - yStackCurrentWaterValues]
+		
+		new Chart("StackWaterLevel", {
+		  type: "bar",
+		  data: {
+			labels: xStackWaterValues,
+			datasets: [
+				{
+				  label: "Current Water Level",
+				  backgroundColor: "#577F9C",
+				  data: yStackCurrentWaterValues,
+				  borderSkipped: false
+				},
+				{
+				  label: "Max Water Storage",
+				  backgroundColor: "#FFF",
+				  data: yStackMaxWaterValues,
+				  borderRadius: {
+					  topLeft: 10,
+					  topRight: 10,
+				  },
+			      borderSkipped: false
+				}
+			]
+		  },
+		  options: {
+			responsive: true,
+			plugins:{
+				legend: {
+					display: true,
+					reverse: true,
+					position: 'right',
+					maxWidth: 150,
+					labels: {
+						color: '#FFF',
+						usePointStyle: true,
+						pointStyle: 'rectRounded'
+					}
+				},
+				tooltip: {
+					callbacks: {
+						label: (item) =>
+						item.dataset.label == 'Max Water Storage' ? (`${item.dataset.label}: 1,053 Acre Feet`):(`${item.dataset.label}: ${item.formattedValue} Acre Feet`),
+					},
+				},
+			},
+			scales: {
+				y: {
+				  ticks:{
+					display: false
+				   },		
+				  stacked: true,
+				  grid: {
+					  drawBorder: false,
+					  drawOnChartArea: false,
+					  display: false,
+				   },
+				},
+				x: {
+				  stacked: true,
+				  ticks:{
+					display: true,
+					color: '#FFF'
+				   },	
+				  grid: {
+					  drawBorder: false,
+					  drawOnChartArea: false,
+					  display: false,
+				   },
+				}
+			  },
+		  }
+		});
+		
+		
+		var xStackTideValues = ['High Tide Level', 'Low Tide Level'];
+		var yStackCurrentTideValues = [4.2, 2.4]
+		var yStackMaxTideValues = [6-yStackCurrentTideValues[0], 6-yStackCurrentTideValues[1]]
+		
+		new Chart("StackTideLevel", {
+		  type: "bar",
+		  data: {
+			labels: xStackTideValues,
+			datasets: [
+				{
+				  label: "Current Tide Level",
+				  backgroundColor: ['#EFB265','#577F9C'],
+				  data: yStackCurrentTideValues,
+				  borderSkipped: false
+				},
+				{
+				  label: "Max Tide Height",
+				  backgroundColor: "#FFF",
+				  data: yStackMaxTideValues,
+				  borderRadius: {
+					  topLeft: 10,
+					  topRight: 10,
+				  },
+			      borderSkipped: false
+				}
+			]
+		  },
+		  options: {
+			responsive: true,
+			plugins:{
+				legend: {
+					display: true,
+					reverse: true,
+					position: 'right',
+					maxWidth: 150,
+					labels: {
+						color: '#FFF',
+						usePointStyle: true,
+						pointStyle: 'rectRounded'
+					}
+				},
+				tooltip: {
+					callbacks: {
+						label: (item) =>
+						item.dataset.label == 'Max Tide Height' ? (`${item.dataset.label}: 6 Feet`):(`${item.dataset.label}: ${item.formattedValue} Feet`),
+					},
+				},
+			},
+			layout: {
+				padding: {
+					top: 25,
+				}
+			},
+			scales: {
+				y: {
+				  ticks:{
+					display: false
+				   },		
+				  stacked: true,
+				  grid: {
+					  drawBorder: false,
+					  drawOnChartArea: false,
+					  display: false,
+				   },
+				},
+				x: {
+				  stacked: true,
+				  ticks:{
+					display: true,
+					color: '#FFF'
+				   },	
+				  grid: {
+					  drawBorder: false,
+					  drawOnChartArea: false,
+					  display: false,
+				   },
+				}
+			  },
+		  }
+		});
+		
+	</script>
+</body>
+</html>
