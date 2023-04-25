@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="Catalina Island, water levels, drought">
+	<meta name="description" content="Catalina Island Water Levels">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<title>Water Levels</title>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+	<link rel="stylesheet" href="style-2.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+	<style>
+        .heading-3{
+            padding: 15px 20px 15px 20px;
+        }
+        #left-container{
+            float: left;
+            height: auto;
+            padding: 30px 0px 30px 30px;
+        }
+        #right-container{
+            float: right;
+            width: 45%;
+            height: auto;
+            padding: 40px;
+        }
+        #weather{
+            padding: 0px 20px 0px 10px;
+            width: 200px;
+        }
+        #time{
+            padding-left: 10px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 30px;
+        }
+        .content-right{
+            float: right;
+        }
+        .content-label{
+            text-align: right;
+            font-family: sans-serif;
+        }
+        #degree{
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 125px;
+            vertical-align: text-bottom;
+            color: #000000;
+        }
+        #degree-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+        }
+        #bottom-row{
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            align-content: flex-start;
+            flex-wrap: wrap;
+
+        }
+        .day-container{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 20px;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            display: none;
+            width: auto;
+        }
+        .week-weather{
+            padding: 0px 0px 20px 0px;
+            
+        }
+        img[src*="13.svg"]{
+            max-height: 65px;
+            scale: 170%;
+        }
+        img[src*="50.svg"]{
+            max-height: 65px;
+            scale: 170%;
+            padding: 20px 0px 37px 0px;
+        }
+	</style>
+</head>
+
+<body>
+<!--	navbar-->
+	<div id="navbar">
+		<ul class="navbar">
+			<li><a class="nav logo" href="home.html"><img src="logo.png" alt="logo"></a></li>
+            <li>
+                <li><a class="paragraph-1 nav" href="water_level.php">water levels</a></li>
+                <li><a class="paragraph-1 nav active" href="weather.html">weather</a></li>
+                <li><a class="paragraph-1 nav" href="tips.html">tips</a></li>
+                <li><a class="paragraph-1 nav" href="history.html">history</a></li>
+            </li>
+		</ul>
+	</div>
+<!--	page container-->
+	<div class="main-container"> 
+<!--		container for the water levels-->
+        <span class="heading-3">Weekly Weather Forcast </span>
+		<div class="rectangle-container">
+			
+			<div id="left-container">
+                <span id="time">Current |  </span>
+                <br>
+                <div id="degree-container">
+                    <img id="weather" src="" alt="">
+                    <span id="degree"></span>
+                </div>
+			</div>
+            <div id="right-container">
+                <span class="content-label"><b>Precipitation</b></span> <span class="content-right" id="precipitation"></span>
+                <hr>
+                <span class="content-label"><b>Humidity</b></span><span class="content-right" id="humidity"></span>
+                <hr>
+                <span class="content-label"><b>Wind</b><span class="content-right" id="wind"></span>
+                <hr>
+                <span class="content-label"><b>Air Quality</b></span><span class="content-right" id="airquality"></span>
+            </div>
+            <div class="clear"></div>
+            <div id="bottom-row">
+                <div class="day-container">
+                    <b id="sun-title">Sun</b>
+                    <br>
+                    <img src="" alt="" id="sun-img" class="week-weather">
+                    <span id="sun-degree"></span>
+                </div>
+                <div class="day-container">
+                    <b id="mon-title">Mon</b>
+                    <br>
+                    <img src="" alt="" id="mon-img" class="week-weather">
+                    <span id="mon-degree"></span>
+                </div>
+                <div class="day-container">
+                    <b id="tue-title">Tue</b>
+                    <br>
+                    <img src="" alt="" id="tue-img" class="week-weather">
+                    <span id="tue-degree"></span>
+                </div>
+                <div class="day-container">
+                    <b id="wed-title">Wed</b>
+                    <br>
+                    <img src="" alt="" id="wed-img" class="week-weather">
+                    <span id="wed-degree"></span>
+                </div>
+                <div class="day-container">
+                    <b id="thu-title">Thu</b>
+                    <br>
+                    <img src="" alt="" id="thu-img" class="week-weather">
+                    <span id="thu-degree"></span>
+                </div>
+                <div class="day-container">
+                    <b id="fri-title">Fri</b>
+                    <br>
+                    <img src="" alt="" id="fri-img" class="week-weather">
+                    <span id="fri-degree"></span>
+                </div>
+                <div class="day-container">
+                    <b id="sat-title">Sat</b>
+                    <br>
+                    <img src="" alt="" id="sat-img" class="week-weather">
+                    <span id="sat-degree"></span>
+                </div>
+            </div>
+            <div class="clear"></div>
+		</div>
+		<br>
+	</div>
+    <script>    
+        apiKey = "dc9265c2c555d644a0eeb294c0b28926"
+        $.ajax({
+            url: 'https://api.openweathermap.org/data/2.5/weather?lat=33.38&lon=-118.41&units=imperial&appid=' + apiKey,
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                $('#weather').attr('src', 'img/'+ data.weather[0].icon.slice(0,2) +'.svg')
+                $('#weather').attr('alt', 'Weather Icon')
+                $('#degree').html(Math.trunc(data.main.temp) + '°')
+                if (typeof data.precipitation != "undefined"){
+                    $('#precipitation').html(data.precipitation.value +" mm")
+                } else{
+                    $('#precipitation').html("0 mm")
+                }
+                windDirection = toTextualDescription(data.wind.deg)
+                $('#wind').html(windDirection + " " + data.wind.speed + ' mph')
+                $('#humidity').html(data.main.humidity + '%')
+                return $.ajax({
+                    url: 'https://api.openweathermap.org/data/2.5/air_pollution?lat=33.38&lon=-118.41&appid=' + apiKey,
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function(data){
+                        $('#airquality').html(toAqi(data.list[0].main.aqi))
+                        return $.ajax({
+                            url: 'https://api.openweathermap.org/data/2.5/forecast?lat=33.38&lon=-118.41&units=imperial&appid=' + apiKey,
+                            method: 'GET',
+                            dataType: 'json',
+                            success: function(data){
+                                days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
+                                date = new Date().toDateString("en-US").slice(0,3).toLowerCase()
+                                dayIndex = days.indexOf(date)
+                                $('#time').html('Current | '+days[dayIndex].toUpperCase()+ ' ' + new Date().toLocaleTimeString("en-US", {hour:'numeric', minute: '2-digit'}) + ' PST')
+                                for (var i =0;i<5;i++){
+                                    listDay= 7*(1+i)
+                                    if (dayIndex+(i+1)>6){
+                                        weekDay = days[dayIndex+(i+1)-7]
+                                    } else {
+                                        weekDay = days[dayIndex+(i+1)]
+                                    }
+                                    $('#'+weekDay+'-img').parent().css('display','flex')
+                                    $('#'+weekDay+'-title').html(weekDay.toUpperCase())
+                                    $('#'+weekDay+'-img').attr('src', 'img/'+ data.list[listDay].weather[0].icon.slice(0,2) +'.svg')
+                                    $('#'+weekDay+'-degree').html(Math.trunc(data.list[listDay].main.temp) + '°')
+                                }
+                            },
+                            error: function(textStatus, errorThrown) {
+                                console.log('Error: ' + textStatus + ' - ' + errorThrown);
+                            },
+                        })
+                    },
+                    error: function(textStatus, errorThrown) {
+                        console.log('Error: ' + textStatus + ' - ' + errorThrown);
+                    }
+                })
+            },
+            error: function(textStatus, errorThrown) {
+                console.log('Error: ' + textStatus + ' - ' + errorThrown);
+            }
+        });
+        
+        function  toTextualDescription(degree){
+            if (degree>337.5) return 'N';
+            if (degree>292.5) return 'NW';
+            if(degree>247.5) return 'W';
+            if(degree>202.5) return 'SW';
+            if(degree>157.5) return 'S';
+            if(degree>122.5) return 'SE';
+            if(degree>67.5) return 'E';
+            if(degree>22.5){return 'NE';}
+            return 'N';
+        }
+        function toAqi(aqi){
+            if (aqi == 1){return 'Good'}
+            if (aqi == 2){return 'Fair'}
+            if (aqi == 3){return 'Moderate'}
+            if (aqi == 4){return 'Poor'}
+            if (aqi == 5){return 'Very Poor'}
+        }
+    </script>
+</body>
+</html>
