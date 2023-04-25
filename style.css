@@ -187,7 +187,7 @@ body {
 
 input,
 button {
-  color: #fff;
+  color: rgb(94, 94, 94);
   font-family: 'Inter';
   padding: 0;
   margin: 0;
@@ -201,11 +201,16 @@ button {
   left: 0;
   right: 0;
   width: 500px;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin: -200px auto 0 auto;
-  background-color: #FF8E00;
-  border-radius: 10px;
-  box-shadow: 0 10px 40px #ffa537, 0 0 0 20px #ffffffeb;
+  background-color: transparent;
+  border-radius: 90px;
+  border-style: solid;
+  border-color: gray;
+  /* box-shadow: 0 10px 40px #ffa537, 0 0 0 20px #ffffffeb; */
   transform: scale(0.6);
 }
 
@@ -222,7 +227,7 @@ input[type="text"] {
 
 /* placeholder text */
 input[type="text"]::placeholder {
-  color: #ffe9ad;
+  color: gray;
 }
 
 #s-cover {
