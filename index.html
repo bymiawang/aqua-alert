@@ -3,6 +3,61 @@
 <head>
   <title>Water Conservation Tips</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+         body{
+            overflow-x: hidden;
+            margin: 0% 0% 5% 0%;
+        }
+        .main-container{
+            margin-right: auto;
+            margin-left: auto;
+            width: 80%;		
+        }
+        #navbar{
+            position: relative;
+            width: 100%;
+            height: 150px;
+            left: 0px;
+            top: -26px;
+
+            background: #003F7D;
+            display: block;
+        }
+        .paragraph-1 {
+            /* Paragraph 1 */
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 30px;
+        }
+        .navbar {
+            list-style: none;
+            text-decoration: none;
+            width: 93%;
+            padding-top: 15px;
+
+            display: flex;
+            flex-direction: row;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav {
+            list-style: none;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+        .logo{
+            margin-right: 300px;
+            margin-left:0px;
+            width: auto;
+            height: 114px;
+        }
+        .nav:hover, .active {
+            color: #FF8E00;
+        }
+  </style>
 </head>
 <body>
     <!-- <nav>
@@ -14,14 +69,17 @@
             <li><a href="https://www.zendesk.com/service/community-forum/">Community</a></li>
         </ul>
     </nav> -->
-    <div class="topnav">
-        <a class="active" href="home.html"><img src="logo.png" alt="logo" style="width:50px;height:50px float:right";></a>
-        <a href="water_level.html">water levels</a>
-        <a href="weather.html">weather</a>
-        <a href="index.html">tips</a>
-        <a href="history.html">history</a>
-        <a href="#profile"><img src="profile.png" alt="profile" style="width:40px;height:40px float:right";></a>
-      </div>
+  <div id="navbar">
+      <ul class="navbar">
+        <li><a class="nav logo" href="home.html"><img src="logo.png" alt="logo"></a></li>
+              <li>
+                  <li><a class="paragraph-1 nav" href="water_level.php">water levels</a></li>
+                  <li><a class="paragraph-1 nav active" href="weather.html">weather</a></li>
+                  <li><a class="paragraph-1 nav" href="tips.html">tips</a></li>
+                  <li><a class="paragraph-1 nav" href="history.html">history</a></li>
+              </li>
+      </ul>
+  </div>
   <header>
     <h1>Water Conservation Tips</h1>
     <!-- <form id="search">
