@@ -201,11 +201,16 @@ button {
   left: 0;
   right: 0;
   width: 500px;
-  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: -200px auto 0 auto;
-  background-color: #FF8E00;
-  border-radius: 10px;
-  box-shadow: 0 10px 40px #ffa537, 0 0 0 20px #ffffffeb;
+  /* background-color: #FF8E00; */
+  border-color: gray;
+  border-style: solid;
+  border-radius: 90px;
+  /* box-shadow: 0 10px 40px #ffa537, 0 0 0 20px #ffffffeb; */
   transform: scale(0.6);
 }
 
@@ -222,7 +227,7 @@ input[type="text"] {
 
 /* placeholder text */
 input[type="text"]::placeholder {
-  color: #ffe9ad;
+  color: gray;
 }
 
 #s-cover {
