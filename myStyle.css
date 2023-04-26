@@ -1,0 +1,129 @@
+body {
+    background-color: white;
+  }
+  
+  h1 {
+    color: black;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Open Sans';
+
+  }
+
+  h2 {
+    font-size: 35;
+    font-weight: bold;
+    font-family: 'Open Sans';
+  }
+
+  h3{
+    font-size: 28;
+    font-weight: bold;
+    font-family: 'Open Sans';
+
+  }
+
+  h4{
+    font-size: 25;
+    font-family: 'Open Sans';
+  }
+
+  p{
+    font-family: 'Inter', sans-serif;
+    font-size: 25; 
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  /* Container holding the image and the text */
+.containerForecast {
+    position: relative;
+    text-align: center;
+    color: black;
+  }
+
+  .forecastWords {
+    position: absolute;
+    text-align: left;
+    bottom: 20px;
+    left: auto ;
+  }
+
+  #index-gallery{
+    width:center;
+  }
+  .containerLevels{
+    text-align:left;
+    display:block;
+    border: 50px solid transparent;
+    float:left;
+    line-height: 0px;
+    
+  }
+  .containerTips{
+    text-align:left;
+    display:block;
+    border: 50px solid transparent;
+    float:right;
+    line-height: 0px;
+  }
+
+  /* unvisited link */
+  a:link {
+    color: black;
+  }
+
+  /* Add a dark blue background color to the top navigation */
+.topnav {
+    background-color: #003F7D;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 40px 50px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    font-weight: bold;
+    color: #FF8E00;
+  }
+
+
+  /* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #FF8E00; /* Orange */
+    color: white;
+    margin-bottom: 15px;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }
+  
