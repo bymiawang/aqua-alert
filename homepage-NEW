@@ -1,0 +1,99 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="myStyle.css">
+        <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap" rel="stylesheet">
+        <style>
+            .container{
+                width: 100%;
+                height:30%;
+                /* min-height: ; */
+                max-height: 600px;
+                padding: 0px;
+                position: relative;
+                text-align:center;
+                color: white;
+            }
+            #slogan{
+                width: 100%;
+                position: absolute;
+                top:25%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                font-size: 4vw;
+            }
+            .alert{
+                width: 100%;
+                margin:0px;
+                border-radius:0px;
+                position:absolute;
+            }
+        </style>
+    </head>
+<body>
+    <div class="topnav">
+        <a class="active" href="home.html"><img src="logo.png" alt="icon" style="width:120px;height:auto; float:right";></a>
+        <a href="water_level.html">water levels</a>
+        <a href="weather.html">weather</a>
+        <a href="index.html">tips</a>
+        <a href="history.html">history</a>
+        <a href="#profile"><img src="profile.png" alt="profile" style="width:40px;height:40px; float:right";></a>
+      </div>
+
+      <div class="container">
+        <img src="https://res.cloudinary.com/simpleview/image/upload/v1551723692/clients/catalinaisland/AvalonAerial_2011_f02af963-d522-4a8d-ab71-4e393860a09a.jpg" style="width:100%">;
+        <div id="slogan">Keeping Catalina Island blue.</div>
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <b style="font-family: 'Inter'; font-size: 30;">Current drought level: 3 </b> &ensp; This information comes from  data source   &emsp; 
+            <a href="https://www.cityofavalon.com/271/Water-Conservation" style = "color: white; text-decoration-line: underline;">read more</a>
+          </div>
+      </div>
+
+<!-- <div class="containerForecast">
+    <img src="forecast.jpg" alt="forecast" style="width:800px; height:auto; border-radius: 25px; margin: 0px 0px 25px 10px;">
+    <div class="forecastWords">
+        <p style = "text-align: left;">WEATHER </p>
+        <h2 style = "line-height: 1.70; text-align: left;">Heavy Rainfall Expected for the Next Two Weeks</h2>
+    </div>
+</div> -->
+    <br>
+
+<div id="index-gallery">
+
+
+        <div class = "containerLevels">
+            <hr>  
+            <h3><a href="water_level.html">Water Levels </a></h3>
+        
+            <hr>  
+            <a href="https://www.cityofavalon.com/271/Water-Conservation"><img src="levels.jpg" style = "height: 300px; border-radius: 25px; margin: 0px 0px 20px 0px;"></a>
+            <p>LEVELS</p>
+            <a href="https://www.cityofavalon.com/271/Water-Conservation"><h4>How Catalina Water Levels Have Changed over the past Year</h4></a>
+            
+        </div>
+
+        <div class = "containerTips">
+            <hr>  
+            <h3><a href="index.html">Tips</a></h3>
+            <hr>  
+            <a href="index.html"><img src="tips.png" style = "height: 300px;     border-radius: 25px;  margin: 0px 0px 20px 0px;
+                "></a>
+            <p>TIPS</p>
+            <h4>How to make 1 gallon of rainwater last a week in your house</h4>
+
+        </div>
+</div>
+</body>
+</html>
