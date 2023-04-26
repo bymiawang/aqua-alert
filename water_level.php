@@ -28,7 +28,7 @@
 	<title>Water Levels</title>
 	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-	<link rel="stylesheet" href="style-2.css">
+	<link rel="stylesheet" href="newStyle.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
@@ -55,20 +55,19 @@
 
 <body>
 <!--	navbar-->
-<!--	navbar-->
 <div id="navbar">
-	<ul class="navbar">
-		<li><a class="nav logo" href="home.html"><img src="logo.png" alt="logo"></a></li>
-		<li>
-			<li><a class="paragraph-1 nav" href="water_level.php">water levels</a></li>
-			<li><a class="paragraph-1 nav active" href="weather.html">weather</a></li>
-			<li><a class="paragraph-1 nav" href="index.html">tips</a></li>
-			<li><a class="paragraph-1 nav" href="history.html">history</a></li>
-		</li>
-	</ul>
-</div>
+		<ul class="paragraph-1 navbar">
+			<li><a class="nav logo" href="home.html"><img src="img/logo.png" alt="logo"></a></li>
+            <li>
+                <li><a class="paragraph-1 nav active" href="water_level.php">water levels</a></li>
+                <li><a class="paragraph-1 nav" href="weather.html">weather</a></li>
+                <li><a class="paragraph-1 nav" href="tips.html">tips</a></li>
+                <li><a class="paragraph-1 nav" href="history.html">history</a></li>
+            </li>
+		</ul>
+	</div>
 <!--	page container-->
-	<div class="main-container"> 
+	<div class="main-container-one"> 
 <!--		container for the water levels-->
 		<div class="box-container">
 			<span class="heading-3">Water Level 💧</span> <span class="heading-4"><br>Most recent <b> Middle Ranch Reservoir </b>data collected: <b id="waterDate">2 Days Ago</b></span>
@@ -78,7 +77,7 @@
 		</div>
 <!--		sqaure container for water conservation-->
 		<div class="square-container">
-			<span class="paragraph-3">Tariff Stage Level &amp; Mandatory Water Conservation <br> <span class="percentage">0%</span><b class="emergency-text" id="stage"></b></span>
+			<span class="paragraph-3">Tariff Stage Level &amp; Mandatory Water Conservation <br> <span class="percentage">0%</span><b class="emergency-text" id="stage">3</b></span>
 			<div>
 			  <canvas id="StackWaterLevel" style="height: 240px; width:100%;max-width:860px"></canvas>
 			</div>
@@ -101,7 +100,7 @@
 			  <canvas id="StackTideLevel" style="height: 270px; width:100%;max-width:860px"></canvas>
 			</div>
 		</div>
-		<div class="float"></div>
+		<div class="clear"></div>
 		<br>
 <!--		information about catalina island-->
 		<div class="heading-2">About Catalina Island Water Preservation</div>

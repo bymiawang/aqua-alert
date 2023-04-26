@@ -101,17 +101,17 @@
 
 <body>
 <!--	navbar-->
-	<div id="navbar">
-		<ul class="paragraph-1 navbar">
-			<li><a class="nav logo" href="home.html"><img src="logo.png" alt="logo"></a></li>
+    <div id="navbar">
+        <ul class="paragraph-1 navbar">
+            <li><a class="nav logo" href="home.html"><img src="img/logo.png" alt="logo"></a></li>
             <li>
-                <li><a class="paragraph-1 nav" href="water_level.html">water levels</a></li>
+                <li><a class="paragraph-1 nav" href="water_level.php">water levels</a></li>
                 <li><a class="paragraph-1 nav active" href="weather.html">weather</a></li>
-                <li><a class="paragraph-1 nav" href="index.html">tips</a></li>
+                <li><a class="paragraph-1 nav" href="tips.html">tips</a></li>
                 <li><a class="paragraph-1 nav" href="history.html">history</a></li>
             </li>
-		</ul>
-	</div>
+        </ul>
+    </div>
 <!--	page container-->
 	<div class="main-container"> 
 <!--		container for the water levels-->
@@ -191,7 +191,7 @@
             method: 'GET',
             dataType: 'json',
             success: function(data) {
-                $('#weather').attr('src', data.weather[0].icon.slice(0,2) +'.svg')
+                $('#weather').attr('src', "img/weather/"+data.weather[0].icon.slice(0,2) +'.svg')
                 $('#weather').attr('alt', 'Weather Icon')
                 $('#degree').html(Math.trunc(data.main.temp) + '°')
                 if (typeof data.precipitation != "undefined"){
@@ -226,7 +226,7 @@
                                     }
                                     $('#'+weekDay+'-img').parent().css('display','flex')
                                     $('#'+weekDay+'-title').html(weekDay.toUpperCase())
-                                    $('#'+weekDay+'-img').attr('src', data.list[listDay].weather[0].icon.slice(0,2) +'.svg')
+                                    $('#'+weekDay+'-img').attr('src',"img/weather/"+ data.list[listDay].weather[0].icon.slice(0,2) +'.svg')
                                     $('#'+weekDay+'-degree').html(Math.trunc(data.list[listDay].main.temp) + '°')
                                 }
                             },
