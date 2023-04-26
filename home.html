@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="myStyle.css">
+        <link rel="stylesheet" href="newStyle.css">
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
         <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,27 +17,31 @@
 
     </head>
 <body>
-    <div class="topnav">
-        <a class="active" href="home.html"><img src="logo.png" alt="icon" style="width:120px;height:auto; float:right";></a>
-        <a href="water_level.html">water levels</a>
-        <a href="weather.html">weather</a>
-        <a href="index.html">tips</a>
-        <a href="history.html">history</a>
-        <a href="#profile"><img src="profile.png" alt="profile" style="width:40px;height:40px; float:right";></a>
-      </div>
+<!--	navbar-->
+<div id="navbar">
+    <ul class="paragraph-1 navbar">
+        <li><a class="nav logo" href="home.html"><img src="logo.png" alt="logo"></a></li>
+        <li>
+            <li><a class="paragraph-1 nav" href="water_level.html">water levels</a></li>
+            <li><a class="paragraph-1 nav active" href="weather.html">weather</a></li>
+            <li><a class="paragraph-1 nav active" href="index.html">tips</a></li>
+            <li><a class="paragraph-1 nav" href="history.html">history</a></li>
+        </li>
+    </ul>
+</div>
 
       <div class="alert">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        <b style="font-family: 'Inter'; font-size: 30;">Current drought level: 3 </b> &ensp; This information comes from  data source   &emsp; 
-        <a href="https://www.cityofavalon.com/271/Water-Conservation" style = "color: white; text-decoration-line: underline;">read more</a>
+        <b>Current drought level: 3 </b> &ensp; This information comes from  data source   &emsp; 
+        <a href="https://www.cityofavalon.com/271/Water-Conservation">read more</a>
       </div>
 
 
 <div class="containerForecast">
-    <img src="forecast.jpg" alt="forecast" style="width:800px; height:auto; border-radius: 25px; margin: 0px 0px 25px 10px;">
+    <img src="forecast.jpg" alt="forecast" >
     <div class="forecastWords">
-        <p style = "text-align: left;">WEATHER </p>
-        <h2 style = "line-height: 1.70; text-align: left;">Heavy Rainfall Expected for the Next Two Weeks</h2>
+        <p>WEATHER </p>
+        <h2>Heavy Rainfall Expected for the Next Two Weeks</h2>
     </div>
 </div>
     <br>
@@ -50,7 +54,7 @@
             <h3><a href="water_level.html">Water Levels </a></h3>
         
             <hr>  
-            <a href="https://www.cityofavalon.com/271/Water-Conservation"><img src="levels.jpg" style = "height: 300px; border-radius: 25px; margin: 0px 0px 20px 0px;"></a>
+            <a href="https://www.cityofavalon.com/271/Water-Conservation"><img src="levels.jpg"></a>
             <p>LEVELS</p>
             <a href="https://www.cityofavalon.com/271/Water-Conservation"><h4>How Catalina Water Levels Have Changed over the past Year</h4></a>
             
@@ -60,8 +64,7 @@
             <hr>  
             <h3><a href="index.html">Tips</a></h3>
             <hr>  
-            <a href="index.html"><img src="tips.png" style = "height: 300px;     border-radius: 25px;  margin: 0px 0px 20px 0px;
-                "></a>
+            <a href="index.html"><img src="tips.png"></a>
             <p>TIPS</p>
             <h4>How to make 1 gallon of rainwater last a week in your house</h4>
 

@@ -1,0 +1,460 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+/* CSS Document */
+body{
+	overflow-x: hidden;
+	margin: 0% 0% 5% 0%;
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+}
+.main-container{
+	margin-right: auto;
+	margin-left: auto;
+	width: 80%;		
+}
+
+.main-container-one{
+  margin-right: auto;
+	margin-left: auto;
+	width: 90%;		
+}
+
+/*Mia & Tara Styles*/
+
+header {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  }
+  
+  h1 {
+    color: black;
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 100px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  /* #search {
+    display: inline-block;
+    margin-top: 10px;
+  } */
+  
+  label {
+    font-size: 20px;
+  }
+  
+  #search-input {
+    font-size: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 10px;
+  }
+  
+  #tips-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  #tags {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #tags a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #FF8E00;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+  }
+  
+  #tags a:hover {
+    background-color: #FF5003;
+    border-radius: 5px;
+  }
+  
+  .tip {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  .tip h2 {
+    margin-top: 0;
+  }
+  
+  .tip p {
+    margin: 0;
+  }
+  
+  .tags {
+    list-style-type: none;
+    margin: 10px 0 0;
+    padding: 0;
+    text-align: right;
+  }
+  
+  .tags li {
+    display: inline-block;
+    margin-right: 10px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(208, 208, 208);
+    border-radius: 5px;
+  }
+  
+  .tags li:last-child {
+    margin-right: 0;
+  }
+  
+  /*
+  .logo img {
+    height:40px;
+  
+  }
+  
+*/
+  html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+.tb {
+  display: table;
+  width: 100%;
+}
+
+/* adjust search in button */
+.td {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+input,
+button {
+  color: rgb(94, 94, 94);
+  font-family: 'Inter';
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+#search2 {
+  left: 0;
+  right: 0;
+  width: 500px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin:  auto;
+  background-color: transparent;
+  border-radius: 90px;
+  border-style: solid;
+  border-color: gray;
+  /* box-shadow: 0 10px 40px #ffa537, 0 0 0 20px #ffffffeb; */
+  transform: scale(0.6);
+}
+
+form {
+  height: 50px;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 47px;
+  font-size: 35px;
+  line-height: 1;
+}
+
+/* placeholder text */
+input[type="text"]::placeholder {
+  color: gray;
+}
+
+#s-cover {
+  width: 100px;
+  padding-left: 20px;
+}
+
+button {
+  position: absolute;
+  display: block;
+  width: 84px;
+  height: 106px;
+  cursor: pointer;
+}
+
+/* adjusts search icon circle */
+#s-circle {
+  position: relative;
+  top: -8px;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  margin-top: 0;
+  border-width: 15px;
+  border: 15px solid #ffe9ad;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: 0.5s ease all;
+}
+
+/* distance of search icon line */
+button span {
+  position: absolute;
+  top: 68px;
+  left: 43px;
+  display: block;
+  width: 45px;
+  height: 15px;
+  background-color: transparent;
+  border-radius: 10px;
+  transform: rotateZ(52deg);
+  transition: 0.5s ease all;
+}
+
+/* adjust the search icon line before hovering */
+button span:before,
+button span:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 45px;
+  height: 15px;
+  background-color: #ffe9ad;
+  border-radius: 10px;
+  transform: rotateZ(0);
+  transition: 0.5s ease all;
+}
+
+/* adjusts the search icon line when you hover over it */
+#s-cover:hover #s-circle {
+  top: -1px;
+  width: 67px; 
+  height: 15px;
+  border-width: 0;
+  background-color: #ffe9ad; 
+  border-radius: 15px; /* changes the roundness of the search icon */
+}
+
+/* adjusts the search icon circle when you hover */
+#s-cover:hover span {
+  top: 50%;
+  left: 54px;
+  width: 25px;
+  margin-top: -9px;
+  transform: rotateZ(0);
+}
+
+#s-cover:hover button span:before {
+  bottom: 11px;
+  transform: rotateZ(52deg);
+}
+
+#s-cover:hover button span:after {
+  bottom: -11px;
+  transform: rotateZ(-52deg);
+}
+#s-cover:hover button span:before,
+#s-cover:hover button span:after {
+  right: -6px;
+  width: 40px;
+  background-color: #ffe9ad;
+}
+
+
+
+
+
+/* Elias Styles*/
+
+.paragraph-1 {
+	/* Paragraph 1 */
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 25px;
+	line-height: 30px;
+}
+
+#navbar{
+	position: relative;
+	width: 100%;
+	height: 150px;
+	left: 0px;
+	top: -26px;
+
+	background: #003F7D;
+	display: block;
+}
+.navbar {
+	list-style: none;
+	text-decoration: none;
+	width: 93%;
+	padding-top: 15px;
+
+	display: flex;
+	flex-direction: row;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.nav {
+	list-style: none;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.logo{
+	margin-right: 300px;
+	margin-left:0px;
+	width: auto;
+	height: 114px;
+}
+.nav:hover, .active {
+	color: #FF8E00;
+}
+.box-container{
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 15px 15px;
+	margin: 30px 6px;
+	gap: 10px;
+
+	position: relative;
+	width: 60%;
+	height: auto;
+	float: left;
+
+	/* Light */
+	background: #FFFFFF;
+	box-shadow: 0px 4px 25px rgba(0, 63, 125, 0.2);
+	border-radius: 20px;
+}
+.square-container{
+	position: inline-block;
+	text-align: center;
+	padding: 15px 20px 15px 20px;
+	margin: 30px 10px;
+	gap: 10px;
+	width: 32%;
+	height: auto;
+	float: left;
+	
+	/* Dark */
+	background: #003F7D;
+	box-shadow: 0px 2.57851px 25px rgba(0, 63, 125, 0.2);
+	border-radius: 20px;
+	
+}
+.rectangle-container{
+	position: inline-block;
+	padding: 20px 20px 20px 20px;
+	margin: 30px 10px;
+	gap: 10px;
+	width: 95%;
+	height: auto;
+	float: left;
+	
+	/* Dark */
+	background: #FFF;
+	filter: drop-shadow(0px 4px 25px rgba(0, 63, 125, 0.2));
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 30px;
+}
+.heading-2{
+	width: auto;
+	height: 45px;
+	/* Heading 3 */
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 35px;
+	line-height: 48px;
+
+	/* Dark */
+	color: #003F7D;
+	display: inline;
+}
+.heading-3 {
+	width: auto;
+	height: 38px;
+	/* Heading 3 */
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 38px;
+
+	/* Dark */
+	color: #003F7D;
+	display: inline;
+}
+.heading-4 {
+	width: auto;
+	height: 15px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+
+	/* Dark */
+
+	color: #003F7D;
+	display: inline;
+}
+.paragraph-2{
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+
+	color: #000000;
+	display: inline;
+}
+.paragraph-3{
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 18px;
+
+	color: #FFF;
+	display: inline;
+}
+.emergency-text{
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 38px;
+	color: #FF8E00;
+}
+.clear {
+	clear: left;
+}
