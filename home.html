@@ -4,15 +4,14 @@
         <link rel="stylesheet" href="newStyle.css">
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
         <meta charset="utf-8">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap" rel="stylesheet">
-        <link href="water_level.php" rel="import"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap" rel="stylesheet">
         <style>
             body {
                 margin: 0px;
@@ -40,21 +39,18 @@
                 color: black;
             }
             .alert{
-                position:absolute;
                 width: 100%;
-                top: 0px;
                 margin:0px;
                 border-radius:0px;
-                z-index: 1;
-                background-color: #FF8F39;
-                line-height: 50px;
+                position:absolute;
             }
             .closebtn {
                 margin-left: 15px;
                 color: white;
                 font-weight: bold;
+                float: right;
                 font-size: 22px;
-                line-height: 50px;
+                line-height: 20px;
                 cursor: pointer;
                 transition: 0.3s;
             }
@@ -87,12 +83,12 @@
     <!--	navbar-->
 	<div id="navbar">
 		<ul class="paragraph-1 navbar">
-			<li><a class="nav logo" href="home.html"><img src="img/logo.png" alt="logo"></a></li>
+			<li><a class="nav logo" href="home.html"><img src="logo.png" alt="logo"></a></li>
             <li>
-                <li><a class="paragraph-1 nav" href="water_level.php">water levels</a></li>
+                <li><a class="paragraph-1 nav" href="water_level.html">water levels</a></li>
                 <li><a class="paragraph-1 nav" href="weather.html">weather</a></li>
-                <li><a class="paragraph-1 nav" href="tips.html">tips</a></li>
-                <li><a class="paragraph-1 nav" href="history.html">history</a></li>
+                <li><a class="paragraph-1 nav" href="index.html">tips</a></li>
+                <li><a class="paragraph-1 nav active" href="history.html">history</a></li>
             </li>
 		</ul>
 	</div>
@@ -114,13 +110,22 @@
           </section>
           
         <div id="slogan">Keeping Catalina Island <span id="blue">blue</span>.</div>
-        <div class="alert">
+        <!-- <div class="alert">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-            <b style="font-family: 'Inter'; font-size: 30;">Current drought level: <span id="stage">3</span> </b>  | This information comes from the City of Avalon: 
+            <b style="font-family: 'Inter'; font-size: 30;">Current drought level: 3 </b> &ensp; This information comes from  data source   &emsp; 
             <a href="https://www.cityofavalon.com/271/Water-Conservation" style = "color: white; text-decoration-line: underline;">read more</a>
-        </div>
+        </div> -->
       </div>
+
+<!-- <div class="containerForecast">
+    <img src="forecast.jpg" alt="forecast" style="width:800px; height:auto; border-radius: 25px; margin: 0px 0px 25px 10px;">
+    <div class="forecastWords">
+        <p style = "text-align: left;">WEATHER </p>
+        <h2 style = "line-height: 1.70; text-align: left;">Heavy Rainfall Expected for the Next Two Weeks</h2>
+    </div>
+</div> -->
     <br>
+
 <div id="index-gallery">
         <div class = "containerLevels">
             <hr>  
@@ -142,7 +147,6 @@
 
         </div>
 </div>
-
 <script type="text/javascript">
     const slidesContainer = document.getElementById("slides-container");
     const slide = document.querySelector(".slide");
@@ -155,7 +159,6 @@
     prevButton.addEventListener("click", () => {
     const slideWidth = slide.clientWidth;
     slidesContainer.scrollLeft -= slideWidth;
-    
     });
 </script>
 </body>
