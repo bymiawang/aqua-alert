@@ -54,7 +54,7 @@
 </head>
 
 <body>
-<!--	navbar-->
+<div class="wrapper">
 <!--	navbar-->
 <div id="navbar">
 	<ul class="navbar">
@@ -118,6 +118,7 @@
 				<li>50 Acre Feet -> Stage 4: 75% use reduction compared to baseline year</li>
 			
 		</div>
+	</div>
 	</div>
 	<script type="text/javascript" src="scrape_water.js"></script>
 	<script type="text/javascript" src="levels.js"></script>
