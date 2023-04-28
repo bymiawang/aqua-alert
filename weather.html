@@ -191,7 +191,7 @@
             method: 'GET',
             dataType: 'json',
             success: function(data) {
-                $('#weather').attr('src', data.weather[0].icon.slice(0,2) +'.svg')
+                $('#weather').attr('src', "img/weather/"+data.weather[0].icon.slice(0,2) +'.svg')
                 $('#weather').attr('alt', 'Weather Icon')
                 $('#degree').html(Math.trunc(data.main.temp) + '°')
                 if (typeof data.precipitation != "undefined"){
@@ -226,7 +226,7 @@
                                     }
                                     $('#'+weekDay+'-img').parent().css('display','flex')
                                     $('#'+weekDay+'-title').html(weekDay.toUpperCase())
-                                    $('#'+weekDay+'-img').attr('src', data.list[listDay].weather[0].icon.slice(0,2) +'.svg')
+                                    $('#'+weekDay+'-img').attr('src', "img/weather/"+data.list[listDay].weather[0].icon.slice(0,2) +'.svg')
                                     $('#'+weekDay+'-degree').html(Math.trunc(data.list[listDay].main.temp) + '°')
                                 }
                             },
