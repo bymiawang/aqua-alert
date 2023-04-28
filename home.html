@@ -4,14 +4,15 @@
         <link rel="stylesheet" href="newStyle.css">
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
         <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap" rel="stylesheet">
+        <link href="water_level.php" rel="import"/>
         <style>
             body {
                 margin: 0px;
@@ -39,18 +40,21 @@
                 color: black;
             }
             .alert{
+                position:absolute;
                 width: 100%;
+                top: 0px;
                 margin:0px;
                 border-radius:0px;
-                position:absolute;
+                z-index: 1;
+                background-color: #FF8F39;
+                line-height: 50px;
             }
             .closebtn {
                 margin-left: 15px;
                 color: white;
                 font-weight: bold;
-                float: right;
                 font-size: 22px;
-                line-height: 20px;
+                line-height: 50px;
                 cursor: pointer;
                 transition: 0.3s;
             }
@@ -77,18 +81,61 @@
                 color: white;
                 padding: 0px 10px 0px 10px;
             }
+            /* footer */
+            #section {
+                position: relative;
+                display: flex;
+                margin-top: 15dvh;
+                width: 100dvw;
+            }
+            footer {
+                background-color: #003F7D;
+                color: white;
+                height: 25dvh;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                column-gap: 10px;
+            }
+            .custom-shape-divider-bottom-1682539500 {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                overflow: hidden;
+                line-height: 0;
+                transform: rotate(180deg);
+            }
+
+            .custom-shape-divider-bottom-1682539500 svg {
+                position: relative;
+                display: block;
+                width: calc(107% + 1.3px);
+                height: 100px;
+            }
+
+            .custom-shape-divider-bottom-1682539500 .shape-fill {
+                fill: #003F7D;
+            }
+            #github{
+                padding: 0px;
+                margin: 0px;
+                width: 2dvw;
+                height: auto;
+            }
         </style>
     </head>
 <body>
     <!--	navbar-->
 	<div id="navbar">
 		<ul class="paragraph-1 navbar">
-			<li><a class="nav logo" href="home.html"><img src="logo.png" alt="logo"></a></li>
+			<li><a class="nav logo" href="home.html"><img src="img/logo.png" alt="logo"></a></li>
             <li>
-                <li><a class="paragraph-1 nav" href="water_level.html">water levels</a></li>
+                <li><a class="paragraph-1 nav" href="water_level.php">water levels</a></li>
                 <li><a class="paragraph-1 nav" href="weather.html">weather</a></li>
-                <li><a class="paragraph-1 nav" href="index.html">tips</a></li>
-                <li><a class="paragraph-1 nav active" href="history.html">history</a></li>
+                <li><a class="paragraph-1 nav" href="tips.html">tips</a></li>
+                <li><a class="paragraph-1 nav" href="history.html">history</a></li>
             </li>
 		</ul>
 	</div>
@@ -110,22 +157,13 @@
           </section>
           
         <div id="slogan">Keeping Catalina Island <span id="blue">blue</span>.</div>
-        <!-- <div class="alert">
+        <div class="alert">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-            <b style="font-family: 'Inter'; font-size: 30;">Current drought level: 3 </b> &ensp; This information comes from  data source   &emsp; 
+            <b style="font-family: 'Inter'; font-size: 30;">Current drought level: <span id="stage">3</span> </b>  | This information comes from the City of Avalon: 
             <a href="https://www.cityofavalon.com/271/Water-Conservation" style = "color: white; text-decoration-line: underline;">read more</a>
-        </div> -->
+        </div>
       </div>
-
-<!-- <div class="containerForecast">
-    <img src="forecast.jpg" alt="forecast" style="width:800px; height:auto; border-radius: 25px; margin: 0px 0px 25px 10px;">
-    <div class="forecastWords">
-        <p style = "text-align: left;">WEATHER </p>
-        <h2 style = "line-height: 1.70; text-align: left;">Heavy Rainfall Expected for the Next Two Weeks</h2>
-    </div>
-</div> -->
     <br>
-
 <div id="index-gallery">
         <div class = "containerLevels">
             <hr>  
@@ -147,6 +185,21 @@
 
         </div>
 </div>
+<section id="section">
+    <div class="custom-shape-divider-bottom-1682539500">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+        </svg>
+    </div>
+</section>
+<footer>
+    <span>Aqua Alert |</span>
+    <a href="https://github.com/bymiawang/aqua-alert">
+        <img id="github" src="img/github.png" alt="Github Logo">
+    </a>
+</footer>
 <script type="text/javascript">
     const slidesContainer = document.getElementById("slides-container");
     const slide = document.querySelector(".slide");
@@ -159,6 +212,7 @@
     prevButton.addEventListener("click", () => {
     const slideWidth = slide.clientWidth;
     slidesContainer.scrollLeft -= slideWidth;
+    
     });
 </script>
 </body>
