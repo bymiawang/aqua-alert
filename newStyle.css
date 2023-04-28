@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 /* CSS Document */
+.wrapper{
+  overflow-x: hidden;
+}
 body{
 	overflow-x: hidden;
 	margin: 0% 0% 5% 0%;
@@ -301,7 +304,7 @@ button span:after {
 
 #navbar{
 	position: relative;
-	width: 100%;
+	width: 100dvw;
 	height: 150px;
 	left: 0px;
 	top: -26px;
@@ -317,7 +320,7 @@ button span:after {
 
 	display: flex;
 	flex-direction: row;
-	flex-flow: row nowrap;
+	flex-flow: row wrap;
 	justify-content: space-between;
 	align-items: center;
 }
@@ -432,7 +435,7 @@ button span:after {
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 22px;
-	margin-bottom:60px
+	margin-bottom:60px;
 
 	color: #000000;
 	display: inline;
