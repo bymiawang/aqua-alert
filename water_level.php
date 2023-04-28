@@ -58,10 +58,10 @@
 <!--	navbar-->
 <div id="navbar">
 	<ul class="navbar">
-		<li><a class="nav logo" href="home.html"><img src="logo.png" alt="logo"></a></li>
+		<li><a class="nav logo" href="index.html"><img src="img/logo.png" alt="logo"></a></li>
 		<li>
-			<li><a class="paragraph-1 nav" href="water_level.php">water levels</a></li>
-			<li><a class="paragraph-1 nav active" href="weather.html">weather</a></li>
+			<li><a class="paragraph-1 nav active" href="water_level.php">water levels</a></li>
+			<li><a class="paragraph-1 nav" href="weather.html">weather</a></li>
 			<li><a class="paragraph-1 nav" href="index.html">tips</a></li>
 			<li><a class="paragraph-1 nav" href="history.html">history</a></li>
 		</li>
