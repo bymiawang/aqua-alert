@@ -181,46 +181,46 @@
             <div class="clear"></div>
             <div id="bottom-row">
                 <div class="day-container">
-                    <b id="sun-title">Sun</b>
+                    <b id="first-title"></b>
                     <br>
-                    <img src="" alt="" id="sun-img" class="week-weather">
-                    <span id="sun-degree"></span>
+                    <img src="" alt="" id="first-img" class="week-weather">
+                    <span id="first-degree"></span>
                 </div>
                 <div class="day-container">
-                    <b id="mon-title">Mon</b>
+                    <b id="second-title"></b>
                     <br>
-                    <img src="" alt="" id="mon-img" class="week-weather">
-                    <span id="mon-degree"></span>
+                    <img src="" alt="" id="second-img" class="week-weather">
+                    <span id="second-degree"></span>
                 </div>
                 <div class="day-container">
-                    <b id="tue-title">Tue</b>
+                    <b id="third-title"></b>
                     <br>
-                    <img src="" alt="" id="tue-img" class="week-weather">
-                    <span id="tue-degree"></span>
+                    <img src="" alt="" id="third-img" class="week-weather">
+                    <span id="third-degree"></span>
                 </div>
                 <div class="day-container">
-                    <b id="wed-title">Wed</b>
+                    <b id="fourth-title"></b>
                     <br>
-                    <img src="" alt="" id="wed-img" class="week-weather">
-                    <span id="wed-degree"></span>
+                    <img src="" alt="" id="fourth-img" class="week-weather">
+                    <span id="fourth-degree"></span>
                 </div>
                 <div class="day-container">
-                    <b id="thu-title">Thu</b>
+                    <b id="fifth-title"></b>
                     <br>
-                    <img src="" alt="" id="thu-img" class="week-weather">
-                    <span id="thu-degree"></span>
+                    <img src="" alt="" id="fifth-img" class="week-weather">
+                    <span id="fifth-degree"></span>
                 </div>
                 <div class="day-container">
-                    <b id="fri-title">Fri</b>
+                    <b id="sixth-title"></b>
                     <br>
-                    <img src="" alt="" id="fri-img" class="week-weather">
-                    <span id="fri-degree"></span>
+                    <img src="" alt="" id="sixth-img" class="week-weather">
+                    <span id="sixth-degree"></span>
                 </div>
                 <div class="day-container">
-                    <b id="sat-title">Sat</b>
+                    <b id="seventh-title"></b>
                     <br>
-                    <img src="" alt="" id="sat-img" class="week-weather">
-                    <span id="sat-degree"></span>
+                    <img src="" alt="" id="seventh-img" class="week-weather">
+                    <span id="seventh-degree"></span>
                 </div>
             </div>
             <div class="clear"></div>
@@ -273,6 +273,7 @@
                             dataType: 'json',
                             success: function(data){
                                 days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
+                                idCount = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh']
                                 date = new Date().toDateString("en-US").slice(0,3).toLowerCase()
                                 dayIndex = days.indexOf(date)
                                 $('#time').html('Current | '+days[dayIndex].toUpperCase()+ ' ' + new Date().toLocaleTimeString("en-US", {hour:'numeric', minute: '2-digit'}) + ' PST')
@@ -283,10 +284,10 @@
                                     } else {
                                         weekDay = days[dayIndex+(i+1)]
                                     }
-                                    $('#'+weekDay+'-img').parent().css('display','flex')
-                                    $('#'+weekDay+'-title').html(weekDay.toUpperCase())
-                                    $('#'+weekDay+'-img').attr('src', "img/weather/"+data.list[listDay].weather[0].icon.slice(0,2) +'.svg')
-                                    $('#'+weekDay+'-degree').html(Math.trunc(data.list[listDay].main.temp) + '°')
+                                    $('#'+idCount[i]+'-img').parent().css('display','flex')
+                                    $('#'+idCount[i]+'-title').html(weekDay.toUpperCase())
+                                    $('#'+idCount[i]+'-img').attr('src', "img/weather/"+data.list[listDay].weather[0].icon.slice(0,2) +'.svg')
+                                    $('#'+idCount[i]+'-degree').html(Math.trunc(data.list[listDay].main.temp) + '°')
                                 }
                             },
                             error: function(textStatus, errorThrown) {
